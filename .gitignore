@@ -1,3 +1,11 @@
+.vs
+Debug/
+Release/
+*.sdf
+*.suo
+*.user
+*.ipch
+
 # Compiled Object files
 *.slo
 *.lo

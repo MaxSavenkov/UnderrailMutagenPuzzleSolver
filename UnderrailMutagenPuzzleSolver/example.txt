@@ -1,0 +1,16 @@
+Exitus-1: WU JJ RJ LX RU IB LM RA D2 LS CI I5 DL IQ OY
+Ovid-1: LX CW WU -RJ
+Ovid-2: JJ P9 IQ LX RU -D2
+Ovid-3: RJ CN IQ OC -RA -CI -LX
+Echo-1: RU IB D2
+Echo-2: P9 CI OY LS OC DL RJ -CW -IQ -WU
+Echo-3: CN RU IB
+Echo-4: IB D2 WU OY CW -RJ
+Helicon-1: JJ D2 OY RJ LX CW -OC -IB
+Helicon-2: ED JJ OY I5 P9 -LM -WU -CI
+Helicon-3: CW D2 WU -IQ
+Io-1: I5 IB IQ OY
+Io-2: P9 CN I5 OC -LS
+Io-3: RJ LM RA -OC -CN -D2
+Solis-1: WU ED RA IB -JJ -I5
+Solis-2: D2 LS CI I5 DL -OY -CW
