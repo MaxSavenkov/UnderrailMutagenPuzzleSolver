@@ -4,12 +4,15 @@ A very dumb, but multi-threaded solver for hard Mutagen Puzzle in Underrail RPG
 # Usage:
 
 -f FILE -- read mutagens from file
+
 -i      -- input mutagens by hand
+
 -t N    -- use N threads (4 by default)
 
 If -f is specified, the file should have this format:
 
 MutagenName1: AA BB -CC DD EE -FF
+
 MutagenName2: AA BB -CC DD EE -FF
 
 The first mutagen in file is considered to be the goal.
@@ -17,7 +20,9 @@ The first mutagen in file is considered to be the goal.
 # Example:
 
 Exitus-1: WU JJ RJ LX RU IB LM RA D2 LS CI I5 DL IQ OY
+
 Ovid-1: LX CW WU -RJ
+
 Echo-2: P9 CI OY LS OC DL RJ -CW -IQ -WUetc...
 
 Hint: to make search go faster, filter out impossible mutagens by hand,
