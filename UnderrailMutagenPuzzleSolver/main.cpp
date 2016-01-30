@@ -71,6 +71,19 @@ public:
 
     unsigned int positiveGenes = 0;
     unsigned int negativeGenes = 0;
+
+
+    void PrintGenes()
+    {
+        for (int i = 0; i < (int)genes.size(); ++i)
+        {
+            if (genes[i].type == SGene::NEGATIVE)
+                printf("-");
+            printf("%s", genes[i].name);
+            printf(" ");
+        }
+        printf("\n");
+    }
 };
 
 struct SSolution
@@ -115,6 +128,13 @@ struct SSolution
         steps.push_back(m);
         return true;
     }
+
+
+    void PrintSteps()
+    {
+        for (int i = 0; i < (int)steps.size(); ++i)
+            printf("%s\n", steps[i]->name.c_str());
+    }
 };
 
 class Solver
@@ -126,6 +146,8 @@ public:
         if (!ParseMutagen(m_goal, genes))
             return false;
 
+        printf("Set goal: "); m_goal.PrintGenes();
+
         return true;
     }    
 
@@ -135,6 +157,8 @@ public:
         m.name = name;
         if ( !ParseMutagen(m, genes) )
             return false;
+
+        printf("Added mutagen %s: ", name.c_str()); m.PrintGenes();
 
         m_mutagens.push_back(m);
         return true;
@@ -209,17 +233,8 @@ public:
                                 if (!allOK)
                                     continue;
 
-                                for (int i = 0; i < (int)s.result.GetGenes().size(); ++i)
-                                {
-                                    if (s.result.GetGenes()[i].type == SGene::NEGATIVE)
-                                        printf("-");
-                                    printf("%s", s.result.GetGenes()[i].name);
-                                    printf(" ");
-                                }
-                                printf("\n");
-
-                                for (int i = 0; i < (int)s.steps.size(); ++i)
-                                    printf("%s\n", s.steps[i]->name.c_str());
+                                s.result.PrintGenes();
+                                s.PrintSteps();
 
                                 return s;
                             }
@@ -282,7 +297,7 @@ public:
                 return false;
             }            
 
-            if ( line == 0 )
+            if ( line == 1 )
             {
                 if ( !SetGoal(mutagenString))
                     return false;
@@ -464,8 +479,8 @@ int main( int argc, char** argv )
         printf("\n");
         printf("Exitus-1: WU JJ RJ LX RU IB LM RA D2 LS CI I5 DL IQ OY\n");
         printf("Ovid-1: LX CW WU -RJ\n");
-        printf("Echo-2: P9 CI OY LS OC DL RJ -CW -IQ -WU");
-        printf("etc...\n");
+        printf("Echo-2: P9 CI OY LS OC DL RJ -CW -IQ -WU\n");
+        printf("etc... (see example.txt for a complete example)\n");
         printf("\n");
         printf("Hint: to make search go faster, filter out impossible mutagens by hand,\n");
         printf("for example those containing genes that are not in the final compound\n");
