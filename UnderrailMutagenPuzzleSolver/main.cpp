@@ -119,7 +119,7 @@ struct SSolution
             {
                 result.RemoveGene(gene);
             }
-            else if ( !( gene.mask & result.positiveGenes || gene.mask & result.negativeGenes ) )
+            else if ( !( gene.mask & result.positiveGenes || gene.mask & result.negativeGenes ) && gene.type != SGene::NEGATIVE )
             {
                 result.AddGene(gene);
             }
