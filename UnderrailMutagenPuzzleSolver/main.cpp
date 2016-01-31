@@ -373,7 +373,8 @@ private:
                 return false;
             }
 
-            m.AddGene(gene);
+            if( gene.mask )
+                m.AddGene(gene);
             ++pos;
             prevPos = pos;
         }
@@ -384,7 +385,9 @@ private:
             fprintf(stderr, "Failed to parse gene at %i: %s\n", prevPos, &genes[prevPos]);
             return false;
         }
-        m.AddGene(gene);
+
+        if( gene.mask )
+            m.AddGene(gene);
 
         return true;
     }
@@ -392,12 +395,9 @@ private:
     bool ParseGene( SGene& gene, const std::string& genes, size_t from, size_t to )
     {
         size_t pos = from;
-        if ( genes[pos] == ' ' ) ++pos;
+        while ( genes[pos] == ' ' && pos < to ) ++pos;
         if ( pos > to )
-        {
-            fprintf(stderr, "Gene sequence is too short. Should be [-]AB\n");
-            return false;
-        }
+            return true;
 
         if ( genes[pos] == '-' )
         {
@@ -442,6 +442,8 @@ private:
             
             gene.mask = newGene.mask;
         }
+
+        while ( genes[pos] == ' ' && pos < to ) ++pos;
 
         return true;
     }
