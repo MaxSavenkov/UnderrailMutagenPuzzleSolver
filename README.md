@@ -3,7 +3,7 @@ A very dumb, but multi-threaded solver for hard Mutagen Puzzle in Underrail RPG
 
 ## Binaries
 
-http://zxstudio.org/projects/underrail/UnderrailMutagenPuzzleSolver_1.0.zip
+http://zxstudio.org/projects/underrail/UnderrailMutagenPuzzleSolver_1.1.zip
 
 ## Usage:
 
